@@ -46,6 +46,8 @@ const config: Config = (window as any)["__CONFIG__"];
 if (!config || !config.version || !config.appSettings || !config.appSettings.dataCubes) {
   throw new Error("config not found");
 }
+console.log(JSON.stringify(config));
+console.log(JSON.stringify(config));
 
 if (config.appSettings.customization.sentryDSN) {
   errorReporterInit(config.appSettings.customization.sentryDSN, config.version);
@@ -58,6 +60,8 @@ Ajax.version = version;
 const appSettings = AppSettings.fromJS(config.appSettings, {
   executorFactory: Ajax.queryUrlExecutorFactory
 });
+
+console.log('appSettings', JSON.stringify(appSettings));
 
 const app =
   <TurniloApplication

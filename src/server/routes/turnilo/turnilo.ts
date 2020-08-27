@@ -41,5 +41,21 @@ export function turniloRouter(settingsGetter: SettingsGetter, version: string) {
     }
   });
 
+  router.get("/test", async (req: Request, res: Response) => {
+    try {
+      const settings = await settingsGetter();
+      const clientSettings = settings.toClientSettings();
+      clientSettings.dataCubes = clientSettings.dataCubes.filter( dataCube => checkAccess(dataCube, req.headers) );
+      res.send({
+        version,
+        title: settings.customization.getTitle(version),
+        appSettings: clientSettings,
+        timekeeper: SETTINGS_MANAGER.getTimekeeper()
+      });
+    } catch (e) {
+      res.status(400).send({ error: "Couldn't load Turnilo Application" });
+    }
+  });
+
   return router;
 }

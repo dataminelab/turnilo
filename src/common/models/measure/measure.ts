@@ -130,6 +130,8 @@ export class Measure extends BaseImmutable<MeasureValue, MeasureJS> {
       parameters.formula = (typeof parameterExpression === "string" ? parameterExpression : $("main").sum($(parameters.name)).toString());
     }
 
+    console.log(BaseImmutable.jsToValue(Measure.PROPERTIES, parameters), 'BaseImmutable.jsToValue(Measure.PROPERTIES, parameters)')
+
     return new Measure(BaseImmutable.jsToValue(Measure.PROPERTIES, parameters));
   }
 
@@ -158,6 +160,9 @@ export class Measure extends BaseImmutable<MeasureValue, MeasureJS> {
 
   constructor(parameters: MeasureValue) {
     super(parameters);
+
+    console.log('parametersMEsasure', parameters)
+    console.log('test1', this)
 
     this.title = this.title || makeTitle(this.name);
     this.expression = Expression.parse(this.formula);
