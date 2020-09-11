@@ -41,7 +41,7 @@ export function turniloRouter(settingsGetter: SettingsGetter, version: string) {
     }
   });
 
-  router.get("/test", async (req: Request, res: Response) => {
+  router.get("/config-turnilo", async (req: Request, res: Response) => {
     try {
       const settings = await settingsGetter();
       const clientSettings = settings.toClientSettings();
