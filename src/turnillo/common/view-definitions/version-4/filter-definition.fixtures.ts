@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+//@ts-ignore
 import { Booleanish } from "../../../client/components/filter-menu/boolean-filter-menu/boolean-filter-menu";
 import { StringFilterAction } from "../../models/filter-clause/filter-clause";
 import {

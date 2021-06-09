@@ -16,7 +16,6 @@
  */
 
 import { Locale } from "../../common/utils/time/time";
-import { FileFormat } from "../utils/download/download";
 
 export const TITLE_HEIGHT = 36;
 
@@ -186,8 +185,7 @@ const EN_US: Locale = {
 export function getLocale(): Locale {
   return EN_US;
 }
-
-export const exportOptions: Array<{ label: string, fileFormat: FileFormat }> = [
+export const exportOptions: Array<{ label: string, fileFormat: any }> = [
   { label: STRINGS.exportToCSV, fileFormat: "csv" },
   { label: STRINGS.exportToTSV, fileFormat: "tsv" }
 ];

@@ -16,8 +16,10 @@
 import { expect } from "chai";
 import { day, month } from "chronoshift";
 import { List } from "immutable";
+//@ts-ignore
 import { EssenceFixtures } from "../../models/essence/essence.fixtures";
 import { TimeFilterPeriod } from "../../models/filter-clause/filter-clause";
+//@ts-ignore
 import { timePeriod } from "../../models/filter-clause/filter-clause.fixtures";
 import { Filter } from "../../models/filter/filter";
 import { TimekeeperFixtures } from "../../models/timekeeper/timekeeper.fixtures";

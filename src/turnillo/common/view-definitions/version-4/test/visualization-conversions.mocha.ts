@@ -43,6 +43,7 @@ describe("Visualization", () => {
     it("reads table visualization and use default settings", () => {
       assertConversionToEssence(
         mockViewDefinitionWithVis("table"),
+        //@ts-ignore
         mockEssenceWithVis(manifest, manifest.visualizationSettings.defaults));
     });
 
@@ -51,6 +52,7 @@ describe("Visualization", () => {
       const convertedSettings = manifest.visualizationSettings.converter.read(settings);
       assertConversionToEssence(
         mockViewDefinitionWithVis("table", settings),
+        //@ts-ignore
         mockEssenceWithVis(manifest, convertedSettings));
     });
   });

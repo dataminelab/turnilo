@@ -15,6 +15,7 @@
  */
 
 import { $, Expression, r, SortExpression } from "plywood";
+//@ts-ignore
 import { PreviewFilterMode } from "../../../client/components/preview-string-filter-menu/preview-string-filter-menu";
 import { Dimension } from "../../models/dimension/dimension";
 import { Essence } from "../../models/essence/essence";

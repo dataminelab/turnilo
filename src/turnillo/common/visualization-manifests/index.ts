@@ -23,9 +23,12 @@ import { LINE_CHART_MANIFEST } from "./line-chart/line-chart";
 import { TABLE_MANIFEST } from "./table/table";
 import { TOTALS_MANIFEST } from "./totals/totals";
 
+
 export const MANIFESTS: VisualizationManifest[] = [
   TOTALS_MANIFEST,
+  //@ts-ignore
   TABLE_MANIFEST,
+  //@ts-ignore
   LINE_CHART_MANIFEST,
   BAR_CHART_MANIFEST,
   HEAT_MAP_MANIFEST

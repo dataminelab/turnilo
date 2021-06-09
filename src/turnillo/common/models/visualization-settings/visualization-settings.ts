@@ -35,5 +35,5 @@ export type VisualizationSettings<T extends VisSettingsInternal = object> = Immu
 
 export interface VisualizationSettingsConfig<T extends VisSettingsInternal> {
   converter: VisualizationSettingsConverter<T>;
-  defaults: VisualizationSettings<T>;
+  defaults: any
 }

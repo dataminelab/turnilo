@@ -15,7 +15,7 @@
  */
 
 import { Record } from "immutable";
-import * as numbro from "numbro";
+import numbro from "numbro";
 import { Unary } from "../../utils/functional/functional";
 import { isFiniteNumber, isNumber } from "../../utils/general/general";
 import { Measure } from "../measure/measure";
@@ -46,6 +46,7 @@ export const customFormat = (value: string) => new SeriesFormat({ type: SeriesFo
 export function formatFnFactory(format: string): (n: number) => string {
   return (n: number) => {
     if (!isNumber(n) || !isFiniteNumber(n)) return "-";
+
     return numbro(n).format(format);
   };
 }

@@ -39,6 +39,7 @@ describe("Splits", () => {
   const mockEssenceWithSplits = (...splits: Split[]) =>
     mockEssence({
       splits: Splits.fromSplits(splits),
+      //@ts-ignore
       visualization: TABLE_MANIFEST,
       visualizationSettings: TABLE_MANIFEST.visualizationSettings.defaults
     });

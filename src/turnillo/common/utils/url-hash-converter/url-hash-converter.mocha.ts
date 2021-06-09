@@ -17,6 +17,7 @@
 import { expect } from "chai";
 import { DataCubeFixtures } from "../../models/data-cube/data-cube.fixtures";
 import { Essence } from "../../models/essence/essence";
+//@ts-ignore
 import { EssenceFixtures } from "../../models/essence/essence.fixtures";
 import { ViewDefinitionVersion } from "../../view-definitions";
 import { hashToObject } from "../../view-definitions/hash-conversions";

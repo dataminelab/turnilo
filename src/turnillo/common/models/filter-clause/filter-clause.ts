@@ -19,6 +19,7 @@ import { Duration, minute, Timezone } from "chronoshift";
 import { List, Record, Set as ImmutableSet } from "immutable";
 import { Datum, Expression, NumberRange as PlywoodNumberRange, r, Set as PlywoodSet, TimeRange } from "plywood";
 import { constructFilter } from "../../../client/components/filter-menu/time-filter-menu/presets";
+
 import { DateRange } from "../date-range/date-range";
 import { Dimension } from "../dimension/dimension";
 import { MAX_TIME_REF_NAME, NOW_REF_NAME } from "../time/time";
@@ -206,7 +207,7 @@ export function toExpression(clause: FilterClause, { expression }: Dimension): E
       const values = (clause as FixedTimeFilterClause).values.toArray();
       const elements = values.map(value => new TimeRange(value));
 
-      const res =  expression.overlap(r(new PlywoodSet({ elements, setType: "TIME_RANGE" })));
+      const res = expression.overlap(r(new PlywoodSet({ elements, setType: "TIME_RANGE" })));
       return res;
     }
     case FilterTypes.RELATIVE_TIME: {

@@ -16,6 +16,7 @@
 
 import { Duration } from "chronoshift";
 import { List, Set } from "immutable";
+//@ts-ignore
 import { Booleanish } from "../../../client/components/filter-menu/boolean-filter-menu/boolean-filter-menu";
 import { DateRange } from "../date-range/date-range";
 import {

@@ -90,6 +90,7 @@ export class TimeShift implements Instance<TimeShiftValue, TimeShiftJS> {
       case FilterTypes.FIXED_TIME:
         const { values } = timeFilter as FixedTimeFilterClause;
         const range = values.first();
+        //@ts-ignore
         return !range.intersects(range.shift(this.value, timezone));
       case FilterTypes.RELATIVE_TIME:
         const { duration } = timeFilter as RelativeTimeFilterClause;

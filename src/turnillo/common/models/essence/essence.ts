@@ -21,7 +21,6 @@ import { RefExpression } from "plywood";
 import { thread } from "../../utils/functional/functional";
 import nullableEquals from "../../utils/immutable-utils/nullable-equals";
 import { visualizationIndependentEvaluator } from "../../utils/rules/visualization-independent-evaluator";
-import { MANIFESTS } from "../../visualization-manifests";
 import { DataCube } from "../data-cube/data-cube";
 import { DateRange } from "../date-range/date-range";
 import { Dimension } from "../dimension/dimension";
@@ -38,14 +37,17 @@ import { Splits } from "../splits/splits";
 import { TimeShift } from "../time-shift/time-shift";
 import { TimeShiftEnv, TimeShiftEnvType } from "../time-shift/time-shift-env";
 import { Timekeeper } from "../timekeeper/timekeeper";
+
+
 import { Resolve, VisualizationManifest } from "../visualization-manifest/visualization-manifest";
 import { VisualizationSettings } from "../visualization-settings/visualization-settings";
 
 function constrainDimensions(dimensions: OrderedSet<string>, dataCube: DataCube): OrderedSet<string> {
-  return <OrderedSet<string>> dimensions.filter(dimensionName => Boolean(dataCube.getDimension(dimensionName)));
+  return <OrderedSet<string>>dimensions.filter(dimensionName => Boolean(dataCube.getDimension(dimensionName)));
 }
 
 export interface VisualizationAndResolve {
+  //@ts-ignore
   visualization: VisualizationManifest;
   resolve: Resolve;
 }
@@ -134,6 +136,7 @@ export class Essence extends ImmutableRecord<EssenceValue>(defaultEssence) {
     series: SeriesList,
     currentVisualization: VisualizationManifest
   ): VisualizationAndResolve {
+    ///@ts-ignore
     const visAndResolves = MANIFESTS.map(visualization => {
       const isSelectedVisualization = visualization === currentVisualization;
       const ruleVariables = { dataCube, splits, series, isSelectedVisualization };

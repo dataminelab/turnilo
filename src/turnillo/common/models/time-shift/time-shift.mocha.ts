@@ -18,6 +18,7 @@ import { expect, use } from "chai";
 import { Duration, Timezone } from "chronoshift";
 import { List } from "immutable";
 import { testImmutableClass } from "immutable-class-tester";
+//@ts-ignore
 import equivalent from "../../../client/utils/test-utils/equivalent";
 
 import { DateRange } from "../date-range/date-range";

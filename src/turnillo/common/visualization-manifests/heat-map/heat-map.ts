@@ -59,6 +59,7 @@ const rulesEvaluator = visualizationDependentEvaluatorBuilder
         } else {
           if (split.type === SplitType.string) {
             split = split.changeSort(new SeriesSort({
+              //@ts-ignore
               reference: series.series.first().reference,
               direction: SortDirection.descending
             }));
