@@ -1,21 +1,19 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
-    "declaration": false,
-    "noImplicitAny": true,
-    "noEmitOnError": true,
-    "removeComments": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "strictNullChecks": false,
-    "skipLibCheck": true,
-    "target": "esnext",
-    "module": "esnext",
-    "rootDir": "src",
-    "outDir": "build",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "noImplicitAny": false,
     "moduleResolution": "node",
-    "jsx": "react",
-    "lib": ["dom", "es6", "es5"],
-    "types": ["node", "express", "mocha", "webpack-env"]
-  }
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/"]
+    }
+  },
+
+  "include": ["src"],
+  "exclude": ["dist", "node_modules/"]
 }
